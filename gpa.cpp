@@ -8,7 +8,11 @@ double calculateGPA(int numCourses, double* courseGrades);
 
 int main(int argc, char* argv[])
 {
+  if (argc % 2 == 0 ){
+     cerr << "Usage: ./gpa course letterGrade" << endl;
+     return 1; 
   
+  }  
   string courseNames[5];
   double courseGrades[5];
   string courseLetterGrades[5];
