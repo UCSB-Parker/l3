@@ -17,13 +17,15 @@ int main(int argc, char* argv[])
   double courseGrades[5];
   string courseLetterGrades[5];
   int numCourses = int(argc/2);
-
-  for (int i = 1; i< argc; i=i+2 ){
-    courseNames[(i-1)/2] = string(argv[i]);
-    courseLetterGrades[(i-1)/2] = string(argv[i+1]);
-    cout<<courseNames[(i-1)/2] << "   "<<courseLetterGrades[(i-1)/2]<<endl;
-  }
-
+  
+  int i = 1;
+  while(i < argc){
+     int j = (i-1)/2;  
+     courseNames[j] = string(argv[i]);
+     courseLetterGrades[j] = string(argv[i+1]); 
+     cout<<courseNames[j]  << "   "<<courseLetterGrades[j]<<endl;
+     i = i + 2;
+     }
   assignCourseGrade(numCourses, courseLetterGrades, courseGrades );
   
   cout.setf(ios::fixed);
